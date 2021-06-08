@@ -6,3 +6,8 @@
   - name: Print Variable
     debug:
       msg: URL = {{URL}}
+  - name: Print Variable
+    vars:
+      URL: task,exapmle.com
+    debug:
+      msg:  URL = {{URL}}
