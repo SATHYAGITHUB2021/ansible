@@ -11,3 +11,11 @@
       URL: task,exapmle.com
     debug:
       msg:  URL = {{URL}}
+- name: Demo on Variabkes from File
+  hosts: all
+  vars_file:
+    - example-vars.yml
+  tasks:
+    - name: Print Variable
+      debug:
+        msg: URL = {{URL}}
