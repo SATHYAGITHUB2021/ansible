@@ -19,12 +19,18 @@
     - name: Print Variable
       debug:
         msg: URL = {{URL}}
-- name: Demo On Variables from user
+- name: Demo On Variables from user input
   hosts: all
   vars_prompt:
     - name: URL
       prompt: Enter URL
       private: false
+  tasks:
+    - name: Print Variable
+      debug:
+        msg: URL ={{URL}}
+- name: Demo On Variables from inventory
+  hosts: all
   tasks:
     - name: Print Variable
       debug:
