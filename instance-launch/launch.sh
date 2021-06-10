@@ -35,7 +35,7 @@ INSTANCE_CREATE() {
   DNS_UPDATE
 }
 
-if [ "${1}" == "all"]; then
+if [ "${1}" == "all" ]; then
   for component in frontend mongodb catalogue redis cart user mysql shipping rabbitmq payment ; do
     COMPONENT=$component
     INSTANCE_CREATE
