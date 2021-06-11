@@ -1,12 +1,21 @@
-- name: Print Component Name
-  debug:
-    msg: Component = Frontend
 - name: Install nginx
   yum:
     name: nginx
     state: latest
+
 - name: Start Nginx
   ansible.builtin.service:
     name: nginx
     state: started
     enabled: yes
+
+- name: Remove old HDDOCS Directory
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: absent
+
+- name: Extract Package
+  ansible.builtin.unarchive:
+    src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
+    dest: /usr/share/nginx/
+    remote_src: yes
