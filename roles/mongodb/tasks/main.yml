@@ -21,6 +21,8 @@
   notify:
     - Restart Mongodb
 
+#handlers will run at the end of play
+
 - name: Start Mongodb service
   systemd:
     name: mongod
