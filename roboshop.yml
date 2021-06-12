@@ -33,3 +33,21 @@
   roles:
     - name: Load catalogue role
       role: redis
+
+- name: Setup roboshop project --user component
+  hosts: USER
+  become: yes
+  tags:
+    - user
+  roles:
+    - name: Load user role
+      role: user
+
+- name: Setup roboshop project --cart component
+  hosts: CART
+  become: yes
+  tags:
+    - cart
+  roles:
+    - name: Load catalogue role
+      role: redis
