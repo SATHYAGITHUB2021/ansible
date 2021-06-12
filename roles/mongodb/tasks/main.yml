@@ -12,9 +12,3 @@
   yum:
     name: mongodb-org
     state: present
-
-- name: Start Mongodb service
-  systemd:
-    name: mongod
-    enabled: yes
-    state: started
