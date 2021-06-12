@@ -7,3 +7,9 @@
     gpgcheck: yes
     gpgcakey: https://www.mongodb.org/static/pgp/server-4.2.asc
     file: mongodb
+
+- name: Install Mongodb
+  yum:
+    name: mongodb-org
+    state: present
+
