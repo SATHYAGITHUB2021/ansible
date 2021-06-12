@@ -38,7 +38,7 @@
 
 - name: Start Mongodb Service
   systemd:
-    name: mongod
+    name: catalogue
     state: restarted
     enabled: yes
     daemon_reload: yes
