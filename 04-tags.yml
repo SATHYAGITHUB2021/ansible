@@ -11,3 +11,5 @@
     - name: Print AZURE
       debug:
         msg: AZURE
+      tags:
+        - AZURE
