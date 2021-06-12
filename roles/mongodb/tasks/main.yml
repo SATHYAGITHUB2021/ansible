@@ -6,3 +6,4 @@
     enabled: yes
     gpgcheck: yes
     gpgcakey: https://www.mongodb.org/static/pgp/server-4.2.asc
+    file: mongodb
