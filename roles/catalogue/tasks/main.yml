@@ -35,3 +35,10 @@
   copy:
     src: systemd.service
     dest: /etc/systemd/system/catalogue.service
+
+- name: Start Mongodb Service
+  systemd:
+    name: mongod
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
