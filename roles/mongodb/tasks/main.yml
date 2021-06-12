@@ -5,10 +5,16 @@
     baseurl: https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.2/x86_64/
     enabled: yes
     gpgcheck: yes
-    gpgcakey: https://www.mongodb.org/static/pgp/server-4.2.asc
+    gpgkey: https://www.mongodb.org/static/pgp/server-4.2.asc
     file: mongodb
 
 - name: Install Mongodb
   yum:
     name: mongodb-org
     state: present
+
+- name: Start Mongodb service
+  systemd:
+    name: mongod
+    enabled: yes
+    state: started
