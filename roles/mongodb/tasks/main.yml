@@ -13,8 +13,17 @@
     name: mongodb-org
     state: present
 
+- name: Update Mongodb Listen File
+  ansible.builtin.replace:
+    path: /etc/mongod.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+  noftify:
+    - Restart Mongodb
+
 - name: Start Mongodb service
   systemd:
     name: mongod
     enabled: yes
-    state: started
+    state: restarted
+
