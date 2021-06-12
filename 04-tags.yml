@@ -1,5 +1,7 @@
 - name: Demo on Tags
   hosts: localhost
+  tags:
+    - AZURE
   tasks:
     - name: Print AWS
       debug:
