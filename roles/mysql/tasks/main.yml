@@ -31,11 +31,6 @@
   debug:
     msg: "{{MYSQL_DEFAULT_PASSWORD}}"
 
-- hosts: centos8
-  user: ansible
-  become: True
-  tasks:
-
 - name: Set MySQL root Password
   mysql_user:
     login_host: 'localhost'
