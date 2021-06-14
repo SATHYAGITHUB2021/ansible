@@ -11,7 +11,7 @@
 - name: Demo on Conditions using Loops
   hosts: localhost
   tasks:
-    name: Conditions using Loops
-    shell: echo {{item}}
-    loop: [ 1, 3, 5, 7, 9 ]
-    when: item > 3
+    - name: Run with items greater than 5
+      ansible.builtin.command: echo {{ item }}
+      loop: [ 0, 2, 4, 6, 8, 10 ]
+      when: item > 5
