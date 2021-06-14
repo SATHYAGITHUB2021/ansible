@@ -1,7 +1,7 @@
 - name: Demo on Conditions
   hosts: localhost
   vars:
-    IS_RUN: false
+    IS_RUN: true
   tasks:
     - name: Run Based on User Input
       debug:
