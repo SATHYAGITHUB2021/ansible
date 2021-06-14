@@ -24,7 +24,7 @@
     enabled: yes
 
 - name: Grabbing Default password
-  shell: grep "A temporary password" /var/log/mqsqld.log | awk '{print $NF}'
+  shell: grep "A temporary password" /var/log/mysqld.log | awk '{print $NF}'
   register: MYSQL_DEFAULT_PASSWORD
 
 - name: Debug
