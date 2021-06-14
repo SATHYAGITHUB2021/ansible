@@ -30,3 +30,7 @@
     state: present
   check_mode: yes
   register: presence
+
+- name: Debug
+  debug:
+    msg: "{{presence}}"
