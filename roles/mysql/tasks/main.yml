@@ -25,7 +25,7 @@
 
 - name: Grabbing Default password
   lineinfile:
-    path: /var/log/mysql
+    path: /var/log/mysqld.log
     line: "A temporary password"
     state: present
   check_mode: yes
