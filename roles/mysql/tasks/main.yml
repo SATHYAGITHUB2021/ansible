@@ -31,8 +31,8 @@
 
 - name: Copy Password Reset SQL script
   copy:
-    src: mysql-paww-reset.sql
-    dest: /tmp/mysql-paww-reset.sql
+    src: mysql-pass-reset.sql
+    dest: /tmp/mysql-pass-reset.sql
 
 - name: Set MySQL root Password
   shell: mysql -u root -p"{{MYSQL_DEFAULT_PASSWORD.stdout}}" < /tmp/mysql-pass-reset.sql
