@@ -2,11 +2,28 @@
   hosts: localhost
   vars:
     IS_RUN: true
+    COUNT: 2
   tasks:
+    ## Boolean condition
     - name: Run Based on User Input
       debug:
         msg: Hello World
       when: IS_RUN
+    ## Boolean condition
+    - name: Print If this Is Ubuntu OS
+      debug:
+        msg: Hello Ubuntu
+      when: ansible_distribution == "Ubuntu"
+    ## Number Condition
+    - name: print if COUNT = 2
+      debug:
+        msg: Hello COUNT = 2
+      when: COUNT == 2
+
+    - name: Print if  COUNT > 1
+      debug:
+        msg: Hello COUNT > 1
+      when: COUNT > 1
 
 - name: Demo on Conditions using Loops
   hosts: localhost
