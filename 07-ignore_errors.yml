@@ -1,0 +1,10 @@
+- name: Demo on Ignore Errors
+  hosts: localhost
+  tasks:
+    - name: Fail This Task
+      fail:
+        msg: Failing For Demo
+
+    - name: Print Hello
+      debug:
+        msg: Hello
