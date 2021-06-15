@@ -17,14 +17,14 @@
     APP_DIR: /home/roboshop/{{COMPONENT}}
     EXTRACT_DIR: /tmp
 
-- name: Copy Extracted Directory
+- name: Copy Content Actual Directory
   ansible.builtin.copy:
     src: /tmp/{{COMPONENT}}-main/
     dest: /home/roboshop/{{COMPONENT}}/
     remote_src: yes
   become_user: roboshop
 
-- name: Download NodeJS Dependencies
+- name: Build a Package with Maven
   shell: mvn clean package && mv target/shipping-1.0.jar shipping.jar
   args:
     chdir: /home/roboshop/{{COMPONENT}}/
