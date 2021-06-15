@@ -60,3 +60,12 @@
   roles:
     - name: Load mysql role
       role: mysql
+
+- name: Setup roboshop project --shipping component
+  hosts: SHIPPING
+  become: yes
+  tags:
+    - shipping
+  roles:
+    - name: Load shipping role
+      role: shipping
