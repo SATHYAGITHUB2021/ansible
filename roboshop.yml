@@ -1,10 +1,10 @@
 - name: Clean Known Hosts
   hosts: localhost
   tasks:
-    name: Clean Known Hosts
-    file:
-      path: ~/.ssh/known_hosts
-      state: absent
+    - name: Clean Known Hosts
+      file:
+        path: ~/.ssh/known_hosts
+        state: absent
 
 - name: Setup roboshop project --frontend component
   hosts: FRONTEND
