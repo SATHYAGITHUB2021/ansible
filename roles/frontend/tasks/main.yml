@@ -34,4 +34,4 @@
     tasks_from: filebeat
   vars:
     IS_STRUCTURED: false
-    FILENAME: /var/nginx/access.log
+    FILENAME: /var/log/nginx/access.log
