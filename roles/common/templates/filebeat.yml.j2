@@ -9,7 +9,7 @@ output.elasticsearch:
   hosts: ["172.31.78.188:9200"]
 {% endif %}
 
-{% if IS_STRUCTURED %}
+{% if not IS_STRUCTURED %}
 output.logstash:
   hosts: ["172.31.78.188:5044"]
 {% endif %}
