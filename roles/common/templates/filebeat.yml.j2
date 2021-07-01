@@ -1,12 +1,19 @@
 filebeat.inputs:
 - type: log
   enabled: true
+{% if IS_STRUCTURED %}
+  json.keys_under_root: true
+{% endif %}
   paths:
     - {{FILENAME}}
 
 {% if IS_STRUCTURED %}
+setup.ilm.enabled: false
+setup.template.name: "{{COMPONENT}}"
+setup.template.pattern: "{{COMPONENT}}-*"
 output.elasticsearch:
   hosts: ["172.31.78.188:9200"]
+  index: "{{COMPONENT}}-%{+yyyy.MM.dd}"
 {% endif %}
 
 {% if not IS_STRUCTURED %}
