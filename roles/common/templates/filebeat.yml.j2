@@ -8,8 +8,11 @@ filebeat.inputs:
     - {{FILENAME}}
 
 {% if IS_STRUCTURED %}
+setup.template.name: "{{COMPONENT}}"
+setup.template.pattern: "{{COMPONENT}}-*"
 output.elasticsearch:
   hosts: ["172.31.78.188:9200"]
+  index: "{{COMPONENT}}-%{+yyyy.MM.dd}"
 {% endif %}
 
 {% if not IS_STRUCTURED %}
