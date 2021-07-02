@@ -42,6 +42,7 @@
     state: restarted
     enabled: yes
     daemon_reload: yes
+    APPTYPE: NODEJS
 
 - name: Setup Filebeat
   include_role:
