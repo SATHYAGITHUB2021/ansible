@@ -6,8 +6,8 @@ filebeat.inputs:
 {% endif %}
   paths:
     - {{FILENAME}}
-    fields:
-      component: {{COMPONENT}}
+  fields:
+    component: {{COMPONENT}}
 
 {% if IS_STRUCTURED %}
 setup.ilm.enabled: false
