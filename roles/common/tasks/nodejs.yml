@@ -42,7 +42,6 @@
     state: restarted
     enabled: yes
     daemon_reload: yes
-    APPTYPE: NODEJS
 
 - name: Setup Filebeat
   include_role:
@@ -51,3 +50,4 @@
   vars:
     IS_STRUCTURED: true
     FILENAME: /var/log/{{COMPONENT}}.log
+    APPTYPE: NODEJS
